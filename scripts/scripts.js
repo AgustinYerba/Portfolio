@@ -137,10 +137,10 @@ jQuery(document).ready(function($){
             document.getElementById('themeButton').value = valueTheme;/* Set el tema */
             
             document.getElementById('buttonToggleNavBar').className = 'buttonDarkNavBarToggleOPEN';
-            $("#buttonToggleNavBar").css({"background-image": "url(../img/dk/)",}); /* languageButton */
+            $("#buttonToggleNavBar").css({"background-image": "url(./img/dk/)",}); /* languageButton */
 
-            $("#languageButton").css({"background-image": "url(../img/dk/menuNavDarkLanguage.png)",}); /* languageButton */
-            $("#themeButton").css({"background-image": "url(../img/dk/solNavBar.png)",}); /* themeButton */
+            $("#languageButton").css({"background-image": "url(./img/dk/menuNavDarkLanguage.png)",}); /* languageButton */
+            $("#themeButton").css({"background-image": "url(./img/dk/solNavBar.png)",}); /* themeButton */
         
           } else if (theme == 'dark'){
             valueTheme = 'light';
@@ -148,8 +148,8 @@ jQuery(document).ready(function($){
 
             document.getElementById('buttonToggleNavBar').className = 'buttonLightNavBarToggleOPEN';
 
-            $("#languageButton").css({"background-image": "url(../img/lgt/menuNavLightLanguage.png)",}); /* languageButton */
-            $("#themeButton").css({"background-image": "url(../img/lgt/lunaNavBar.png)",}); /* themeButton */
+            $("#languageButton").css({"background-image": "url(./img/lgt/menuNavLightLanguage.png)",}); /* languageButton */
+            $("#themeButton").css({"background-image": "url(./img/lgt/lunaNavBar.png)",}); /* themeButton */
           } 
       
         }
