@@ -157,16 +157,16 @@ jQuery(document).ready(function($){
   /* ============== Gestion y control de HABILIDADES ============== */
 
     var skillImage = [undefined,
-    /* html5----------- */'../img/logos/html5Logo.png',
-    /* css3------------ */'../img/logos/css3Logo.png',
-    /* javascript------ */'../img/logos/jsLogo.png',
-    /* mysql----------- */'../img/logos/mysqlLogo.png',
-    /* firebase-------- */'../img/logos/firebaseLogo.png',
-    /* react----------- */'../img/logos/reactLogo.png',
-    /* angular--------- */'../img/logos/angularLogo.png',
-    /* nodejs---------- */'../img/logos/nodejsLogo.png',
-    /* express--------- */'../img/logos/expressjsLogo.png',
-    /* mongodb--------- */'../img/logos/mongodb.png',
+    /* html5----------- */'./img/logos/html5Logo.png',
+    /* css3------------ */'./img/logos/css3Logo.png',
+    /* javascript------ */'./img/logos/jsLogo.png',
+    /* mysql----------- */'./img/logos/mysqlLogo.png',
+    /* firebase-------- */'./img/logos/firebaseLogo.png',
+    /* react----------- */'./img/logos/reactLogo.png',
+    /* angular--------- */'./img/logos/angularLogo.png',
+    /* nodejs---------- */'./img/logos/nodejsLogo.png',
+    /* express--------- */'./img/logos/expressjsLogo.png',
+    /* mongodb--------- */'./img/logos/mongodb.png',
    ]
 
    var skillDescription = [undefined,
