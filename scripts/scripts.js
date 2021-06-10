@@ -242,4 +242,33 @@ jQuery(document).ready(function($){
             
       }
 
+  /* ============== Seccion de EXPERIENCIA ============== */
+    
+    /* GRID con los logos */
+      var experienceLogos = [undefined,
+        /* html5----------- */'./img/logos/html5Logo.png',
+        /* css3------------ */'./img/logos/css3Logo.png',
+        /* javascript------ */'./img/logos/jsLogo.png',
+        /* mysql----------- */'./img/logos/mysqlLogo.png',
+        /* firebase-------- */'./img/logos/firebaseLogo.png',
+        /* react----------- */'./img/logos/reactLogo.png',
+        /* angular--------- */'./img/logos/angularLogo.png',
+        /* nodejs---------- */'./img/logos/nodejsLogo.png',
+        /* express--------- */'./img/logos/expressjsLogo.png',
+        /* mongodb--------- */'./img/logos/mongodb.png',
+      ]
+
+      var experienceName = [undefined,
+        /* html5----------- */'HTML5',
+        /* css3------------ */'CSS3',
+        /* javascript------ */'JavaScript',
+        /* mysql----------- */'MySQL',
+        /* firebase-------- */'Firebase',
+        /* react----------- */'React',
+        /* angular--------- */'Angular',
+        /* nodejs---------- */'NodeJS',
+        /* express--------- */'EXPRESS',
+        /* mongodb--------- */'MongoDB',
+      ]
+      
 });
