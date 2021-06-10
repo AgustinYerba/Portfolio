@@ -25,13 +25,19 @@
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
+}
+
+:root{
+    box-sizing: border-box !important;
 
 }
 
 body{
     overflow-y: scroll;
-    overflow-x: scroll !important;
-    
+    overflow-x: hidden;
+    user-select: none;
+    padding: 0;
 }
 
 
@@ -53,11 +59,12 @@ body{
 
             /* Lista PADRE con items de navBar */
                 .navBarListOPEN{
-                    padding-top: 10px;
-                    padding-bottom: 15px;
+                    padding-top: 0.8vw;
+                    padding-bottom: 0.8vw;
                     
-                    margin-right: 60px;
-                    padding-left: 100px;
+                    margin-right: 4.2vw;
+                    padding-right: 3.5vw;
+                    padding-left: 6.3vw;
 
                     list-style: none;
                     display: flex;
@@ -66,8 +73,8 @@ body{
                     white-space: pre; 
 
                     position: fixed;
-                    right: 35px;
-                    top: 24px;
+                    right: 1vw;
+                    top: 1.6vw;
                     z-index: 90;
 
                     backdrop-filter: blur(5px) brightness(40%);
@@ -87,10 +94,12 @@ body{
                     }
 
                 .navBarListCLOSE{
-                    padding-top: 10px;
-                    padding-bottom: 15px;
+                    padding-top: 0.8vw;
+                    padding-bottom: 0.8vw;
                     
-                    margin-right: 30px;
+                    margin-right: 4.2vw;
+                    padding-right: 3.5vw;
+                    padding-left: 6.3vw;
 
                     list-style: none;
                     display: flex;
@@ -99,9 +108,9 @@ body{
                     white-space: pre; 
 
                     position: fixed;
-                    top: 24px;
+                    right: 1vw;
+                    top: 1.6vw;
                     z-index: 90;
-
 
                     animation-duration: 300ms;
                     animation-name: navBarListCLOSE;
@@ -111,8 +120,8 @@ body{
                 }
         
                     @keyframes navBarListCLOSE {
-                        from{width: 0%; right: 23px; margin-right: 30px; opacity: 0%;}
-                        to{width: 100%; right: 35px; margin-right: 60px; opacity: 100%;}
+                        from{width: 0%; right: 0.5vw; margin-right: 2vw; opacity: 0%;}
+                        to{width: 100%; right: 1vw; margin-right: 4vw; opacity: 100%;}
                     }
 
                 /* Items de lista de navBar */
@@ -126,7 +135,7 @@ body{
                         font-size: 4vw;
                         font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                         user-select: none;
-                        text-shadow: 0px 0px 20px rgb(251, 255, 0);
+                        text-shadow: 0px 0px 1.2vw rgb(0, 0, 0);
 
                         animation-duration: 10s;
                         animation-name: shadowColourChange ;
@@ -136,17 +145,17 @@ body{
                     }
             
                         @keyframes shadowColourChange {
-                            0%  {text-shadow: 0px 0px 5px rgb(255, 0, 0);}
-                            10% {text-shadow: 0px 0px 5px rgb(255, 94, 0);}
-                            20% {text-shadow: 0px 0px 5px rgb(255, 136, 0);}
-                            30% {text-shadow: 0px 0px 5px rgb(255, 208, 0);}
-                            40% {text-shadow: 0px 0px 5px rgb(208, 255, 0);}
-                            50% {text-shadow: 0px 0px 5px rgb(94, 255, 0);}
-                            60% {text-shadow: 0px 0px 5px rgb(0, 255, 128);}
-                            70% {text-shadow: 0px 0px 5px rgb(0, 255, 234);}
-                            80% {text-shadow: 0px 0px 5px rgb(0, 195, 255);}
-                            90% {text-shadow: 0px 0px 5px rgb(0, 89, 255);}
-                            100%{text-shadow: 0px 0px 5px rgb(68, 0, 255);}
+                            0%  {text-shadow: 0px 0px 0.5vw rgb(255, 0, 0);}
+                            10% {text-shadow: 0px 0px 0.5vw rgb(255, 94, 0);}
+                            20% {text-shadow: 0px 0px 0.5vw rgb(255, 136, 0);}
+                            30% {text-shadow: 0px 0px 0.5vw rgb(255, 208, 0);}
+                            40% {text-shadow: 0px 0px 0.5vw rgb(208, 255, 0);}
+                            50% {text-shadow: 0px 0px 0.5vw rgb(94, 255, 0);}
+                            60% {text-shadow: 0px 0px 0.5vw rgb(0, 255, 128);}
+                            70% {text-shadow: 0px 0px 0.5vw rgb(0, 255, 234);}
+                            80% {text-shadow: 0px 0px 0.5vw rgb(0, 195, 255);}
+                            90% {text-shadow: 0px 0px 0.5vw rgb(0, 89, 255);}
+                            100%{text-shadow: 0px 0px 0.5vw rgb(68, 0, 255);}
     
                         }
 
@@ -163,11 +172,8 @@ body{
 
                 /* Item de lista con BOTON TOGGLE <DARK - CLOSE> navBar */
                     #buttonToggleNavBar{
-                        width: 7vw;/* 70px */
-                        height: 7vw;/* 70px */
-
-                        max-width: 70px;
-                        max-height: 70px;
+                        width: 6vw;/* 70px */
+                        height: 6vw;/* 70px */
 
                         outline: none !important;
                         border-width: 0;
@@ -176,10 +182,10 @@ body{
                         z-index: 100;
                 
                         position: fixed;
-                        right: 30px;
-                        top: 30px;
+                        right: 2vw;
+                        top: 1.8vw;
 
-                        background-size: 77px 77px;
+                        background-size: 6.3vw 6.3vw;
                         background-position: center center;
 
                         box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.548);
@@ -274,10 +280,10 @@ body{
                     width: 0px;
                     padding: 0;
                     position: absolute;
-                    right: 13px;
+                    right: 0.8vw;
                     justify-content: center;
-                    top: 20px;
-                    padding-top: 45px;
+                    top: 1.8vw;
+                    padding-top: 3vw;
                     overflow: visible;
                 }
 
@@ -285,7 +291,6 @@ body{
                     height: 0px;
                     width: 0px;
                 }
-               
 
                 /* Animacion boton cambiar LENGUAJE */
                     .languageButtonAnimOPEN{
@@ -295,9 +300,10 @@ body{
                         animation-fill-mode: both;
                         animation-direction: alternate;                        
                     }
+
                         @keyframes animLanguageButtonOPEN {
-                            0%{top: 15px;}
-                            100%{top: 90px;}
+                            0%{top: 1vw;}
+                            100%{top: 7vw;}
                         } 
 
                     .languageButtonAnimCLOSE{
@@ -309,8 +315,8 @@ body{
                     }
 
                         @keyframes animLanguageButtonCLOSE {
-                            0%{top: 15px;}
-                            100%{top: 90px;}
+                            0%{top: 1vw;}
+                            100%{top: 7vw;}
                         } 
 
                 /* Animacion boton cambiar TEMA */
@@ -323,8 +329,8 @@ body{
                     }
 
                         @keyframes animThemeButtonOPEN {
-                            0%{top: 15px; opacity: 0%;}
-                            100%{top: 159px; opacity: 100%;}
+                            0%{top: 1vw; opacity: 0%;}
+                            100%{top: 12.5vw; opacity: 100%;}
                         }
 
                     .themeButtonAnimCLOSE{
@@ -336,8 +342,8 @@ body{
                     }
 
                         @keyframes animThemeButtonCLOSE {
-                            0%{top: 15px; opacity: 0%;}
-                            100%{top: 159px; opacity: 100%;}
+                            0%{top: 1vw; opacity: 0%;}
+                            100%{top: 12.5vw; opacity: 100%;}
                         }
 
                 /* Hovers a botones anteriores */
@@ -348,11 +354,14 @@ body{
                     #themeButton:hover{
                         filter: contrast(180%) brightness(105%);
                     }  
+
     /* ============================================================================== */
     /* ===================================== MAIN =================================== */
     /* ============================================================================== */
-
-        /* ~~~~~~~~~~~~~~~~~~~~~~ Tarjeta de presentacion ~~~~~~~~~~~~~~~~~~~~~~ */  
+        
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~~~ Tarjeta de presentacion ~~~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */  
 
             /* Contenedor de tarjeta de presentacion */
                 .presentationInfoCardOPEN{
@@ -534,251 +543,663 @@ body{
                                 color: aliceblue;
                             }    
 
-        /* ~~~~~~~~~~~~~~~~~~~~~~ Contenedores de habilidades ~~~~~~~~~~~~~~~~~~~~~~ */  
-        
-        /* Contenedor SECCION de habilidades */                    
-            .skillGrlContainer{
-                box-sizing: border-box !important;
-                position: relative;
-                width: 100%;
-                top: 1020px;
-                z-index: 5;
-            }    
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~ Contenedores de habilidades ~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
 
-            /* Contenedor del titulo de la seccion */
-                .skillTitleSectionContainer{
-                    width: 50%;
-                    height: 100px;
-
-                    position: absolute;
-                    top: -120px;/* -120 */
-                    right: 0;
-
-                    box-shadow: 15px 15px 15px rgb(0, 0, 0);
-                    border-bottom: 100px solid rgba(26, 26, 26, 0.637);
-                    
-                    animation-duration: 15s;
-                    animation-name: colourChange;
-                    animation-iteration-count: infinite;
-                    animation-fill-mode: both;
-                    animation-direction: alternate-reverse;
-                }
-        
-                    @keyframes colourChange {
-                        0%{border-left: 5vw dashed rgb(255, 0, 0);}
-                        10%{border-left: 5vw dashed rgb(255, 94, 0);}
-                        20%{border-left: 5vw dashed rgb(255, 136, 0);}
-                        30%{border-left: 5vw dashed rgb(255, 208, 0);}
-                        40%{border-left: 5vw dashed rgb(208, 255, 0);}
-                        50%{border-left: 5vw dashed rgb(94, 255, 0);}
-                        60%{border-left: 5vw dashed rgb(0, 255, 128);}
-                        70%{border-left: 5vw dashed rgb(0, 255, 234);}
-                        80%{border-left: 5vw dashed rgb(0, 195, 255);}
-                        90%{border-left: 5vw dashed rgb(0, 89, 255);}
-                        100%{border-left: 5vw dashed rgb(68, 0, 255);}
-
-                    }
-
-                /* Trítulo de la seccion */
-                    .skillTitleSection{
-                        margin-top: 1%;
-                        margin-left: 20px;
-                        display: flex;
-                        color: aliceblue;
-                        position: relative;
-                        user-select: none;
-                        font-size: 600%;
-                        font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                        text-shadow: 0px 0px 50px rgb(0, 0, 0);                    
-                        
-                    }
-
-            /* Contenedor de los cuadros de las habilidades */
-                .skillsContainer{
+            /* Contenedor SECCION de habilidades */                    
+                .skillGrlContainer{
+                    box-sizing: border-box !important;
+                    position: relative;
                     width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    padding-top: 21px;
-                }
+                    top: 1020px;
+                    z-index: 5;
+                }    
 
-                /* Contenedor de cada habilidad */
-                    .skillSpecificContainer{
-                        overflow: hidden;
-                        position: relative;
-                        margin: 0;
-                        height: 350px;
-                        width: 350px;
-                        border-radius: 20px;
-                        border-width: 1px;
-                        border-left-style: dashed;
-                        border-right-style: dashed;
-                        border-color: rgba(255, 230, 0, 0.096);
-                        background-color: rgb(43, 43, 43);
-                        
-                        animation-duration: 200ms;
-                        animation-name: skillSpecificContainerCLOSE;
-                        animation-iteration-count: 1;
-                        animation-fill-mode: both;
-                        animation-direction: alternate-reverse;
-                    }
-            
-                        @keyframes skillSpecificContainerCLOSE {
-                            from{width: 300px;box-shadow: 0px 0px 30px 10px rgb(0, 0, 0);}
-                            to{width: 400px;box-shadow: 0px 0px 30px 20px  rgb(0, 0, 0);}
-                        }
+                /* Contenedor del titulo de la seccion */
+                    .skillTitleSectionContainerOPEN{
+                        width: 50%;
+                        height: 100px;
 
-                    .skillSpecificContainer:hover{
-                        
-                        animation-duration: 1000ms;
-                        animation-name: skillSpecificContainerOPEN;
+                        position: absolute;
+                        top: -150px;/* -120 */
+
+                        box-shadow: 0px 0px 15px 10px rgb(0, 0, 0);
+                        border-bottom: 100px solid rgba(36, 36, 36, 0.637);
+                        border-left: 5vw dashed rgb(68, 0, 255);
+
+                        animation-delay: 100ms;
+                        animation-duration: 1s;
+                        animation-name: openTittleSkill;
                         animation-iteration-count: 1;
                         animation-fill-mode: both;
                         animation-direction: alternate;
                     }
-            
-                        @keyframes skillSpecificContainerOPEN {
-                            from{width: 300px;box-shadow: 0px 0px 10px  rgb(0, 0, 0);}
-                            to{width: 400px;box-shadow: 0px 0px 50px 20px  rgb(0, 0, 0);z-index: 10;}
+                        @keyframes openTittleSkill {
+                            from{right: -100%;}
+                            to{right: 0;}
                         }
 
-                /* Lista PADRE contenedora de info de skill */
-                    .skillInfoContainer{
-                        justify-content: center;
-                        align-items: center;
-                        display: grid;
-                        grid-template-columns: repeat(1, 5fr);
-                        grid-auto-rows: auto;                    
-                        margin: 0;
-                        padding: 0;
-                        z-index: 5 !important;
-                        list-style: none;
-                    }
-                
+                    .skillTitleSectionContainer{
+                        width: 50%;
+                        height: 100px;
 
-                    /* Item de la lista Contenedor de la imagen de skill */
-                        .skillImageContainer{
-                            z-index: 2;
-                            position: absolute;
-                            top: 0;
-                            margin: auto;
-                            backdrop-filter: blur(5px) brightness(60%);
-                            border-radius: 20px;
-                            width: 100%;
-                            height: 100%;
+                        position: absolute;
+                        top: -150px;/* -120 */
+                        right: 0;
+
+                        box-shadow: 0px 0px 15px 10px rgb(0, 0, 0);
+                        border-bottom: 100px solid rgba(36, 36, 36, 0.637);
+                        
+                        animation-duration: 15s;
+                        animation-name: colourChange;
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: both;
+                        animation-direction: alternate-reverse;
+                    }
+            
+                        @keyframes colourChange {
+                            0%{border-left: 5vw dashed rgb(255, 0, 0);}
+                            10%{border-left: 5vw dashed rgb(255, 94, 0);}
+                            20%{border-left: 5vw dashed rgb(255, 136, 0);}
+                            30%{border-left: 5vw dashed rgb(255, 208, 0);}
+                            40%{border-left: 5vw dashed rgb(208, 255, 0);}
+                            50%{border-left: 5vw dashed rgb(94, 255, 0);}
+                            60%{border-left: 5vw dashed rgb(0, 255, 128);}
+                            70%{border-left: 5vw dashed rgb(0, 255, 234);}
+                            80%{border-left: 5vw dashed rgb(0, 195, 255);}
+                            90%{border-left: 5vw dashed rgb(0, 89, 255);}
+                            100%{border-left: 5vw dashed rgb(68, 0, 255);}
+                        }
+
+                    /* Título de la seccion */
+                        .skillTitleSection{
+                            margin-top: 1%;
+                            margin-left: 1.5vw;
                             display: flex;
-                            justify-content: center;
-                            animation-delay: 100ms;
-                            animation-duration: 500ms;
-                            animation-name: skillImgCLOSE;
+                            color: aliceblue;
+                            position: absolute;
+                            user-select: none;
+                            font-size: 5.7vw;
+                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            text-shadow: 0px 0px 0.1vw rgb(0, 0, 0);                  
+                            
+                        }
+
+                /* Contenedor de los cuadros de las habilidades */
+                    .skillsContainer{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 21px;
+                        margin-bottom: 40px;
+                    }
+
+                    /* Contenedor de cada habilidad */
+                        .skillSpecificContainer{
+                            overflow: hidden;
+                            position: relative;
+                            margin: 0;
+                            height: 350px;
+                            width: 350px;
+                            border-radius: 20px;
+                            border-width: 1px;
+                            border-left-style: dashed;
+                            border-right-style: dashed;
+                            border-color: rgba(255, 230, 0, 0.096);
+                            background-color: rgb(43, 43, 43);
+                            
+                            animation-duration: 200ms;
+                            animation-name: skillSpecificContainerCLOSE;
                             animation-iteration-count: 1;
                             animation-fill-mode: both;
                             animation-direction: alternate-reverse;
                         }
-
-                            @keyframes skillImgCLOSE {
-                                0%{width: 100%; height: 100%;backdrop-filter: blur(5px) brightness(60%);padding-bottom: 0%;}
-                                100%{width: 100%; height: 100%;backdrop-filter: blur(1px) brightness(100%); padding-bottom: 60%;}
+                
+                            @keyframes skillSpecificContainerCLOSE {
+                                from{width: 300px;box-shadow: 0px 0px 30px 10px rgb(0, 0, 0);}
+                                to{width: 400px;box-shadow: 0px 0px 30px 20px  rgb(0, 0, 0);}
                             }
 
-                        .skillImageContainer:hover{
-                            animation-delay: 100ms;
-                            animation-duration: 500ms;
-                            animation-name: skillImgOPEN;
+                        .skillSpecificContainer:hover{
+                            animation-duration: 200ms;
+                            animation-name: skillSpecificContainerOPEN;
                             animation-iteration-count: 1;
                             animation-fill-mode: both;
-                            animation-direction: alternate;
+                            animation-direction: alternate; 
                         }
                 
-                            @keyframes skillImgOPEN {
-                                0%{width: 100%; height: 100%;backdrop-filter: blur(5px) brightness(60%);padding-bottom: 0%;}
-                                15%{width: 100%; height: 105%;backdrop-filter: blur(3px) brightness(60%);padding-bottom: 0%;}
-                                80%{width: 100%; height: 100%;backdrop-filter: blur(1px) brightness(100%); padding-bottom: 80%;}
-                                100%{width: 100%; height: 100%;backdrop-filter: blur(0px) brightness(100%); padding-bottom: 80%; padding-top: 10px;}
+                            @keyframes skillSpecificContainerOPEN {
+                                from{width: 300px;box-shadow: 0px 0px 10px  rgb(0, 0, 0);}
+                                to{width: 400px;box-shadow: 0px 0px 50px 20px  rgb(0, 0, 0);z-index: 10;}
+                            } 
+
+                    /* Lista PADRE contenedora de info de skill */
+                        .skillInfoContainer{
+                            justify-content: center;
+                            align-items: center;
+                            display: grid;
+                            grid-template-columns: repeat(1, 5fr);
+                            grid-auto-rows: auto;                    
+                            margin: 0;
+                            padding: 0;
+                            z-index: 5 !important;
+                            list-style: none;
+                        }
+                    
+                        /* Item de la lista Contenedor de la imagen de skill */
+                            .skillImageContainer{
+                                z-index: 2;
+                                position: absolute;
+                                top: 0;
+                                margin: auto;
+                                backdrop-filter: blur(5px) brightness(60%);
+                                border-radius: 20px;
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                animation-delay: 100ms;
+                                animation-duration: 500ms;
+                                animation-name: skillImgCLOSE;
+                                animation-iteration-count: 1;
+                                animation-fill-mode: both;
+                                animation-direction: alternate-reverse;
+                            }
+
+                                @keyframes skillImgCLOSE {
+                                    0%{width: 100%; height: 100%;backdrop-filter: blur(5px) brightness(60%);padding-bottom: 0%;}
+                                    100%{width: 100%; height: 100%;backdrop-filter: blur(1px) brightness(100%); padding-bottom: 60%;}
+                                }
+
+                            .skillImageContainer:hover{
+                                animation-delay: 100ms;
+                                animation-duration: 500ms;
+                                animation-name: skillImgOPEN;
+                                animation-iteration-count: 1;
+                                animation-fill-mode: both;
+                                animation-direction: alternate;
                             }
                     
-                        /* IMAGEN de la habilidad */
-                            .skillImage{
-                                position: relative;
-                                top: 0px;
-                                margin-top: 20px;
-                                display: flex;
-                                height: 35%;/* 45% */
-                                min-height: 100px;
-                                margin: auto auto;
+                                @keyframes skillImgOPEN {
+                                    0%{width: 100%; height: 100%;backdrop-filter: blur(5px) brightness(60%);padding-bottom: 0%;}
+                                    15%{width: 100%; height: 105%;backdrop-filter: blur(3px) brightness(60%);padding-bottom: 0%;}
+                                    80%{width: 100%; height: 100%;backdrop-filter: blur(1px) brightness(100%); padding-bottom: 80%;}
+                                    100%{width: 100%; height: 100%;backdrop-filter: blur(0px) brightness(100%); padding-bottom: 80%; padding-top: 10px;}
+                                }
+                        
+                            /* IMAGEN de la habilidad */
+                                .skillImage{
+                                    position: relative;
+                                    top: 0px;
+                                    margin-top: 20px;
+                                    display: flex;
+                                    height: 35%;/* 45% */
+                                    min-height: 100px;
+                                    margin: auto auto;
+                                    justify-content: center;
+                                }
+
+                        /* Item de la lista LINEA divisoria de la habilidad */
+                            .skillDivisoryLine{
+                                display: none;
+                                border-color: aliceblue;
+                                border-width: 2px;
+                                position: absolute;
+                                top: 0;
+                                animation-duration: 2000ms;
+                                animation-name: listItemPresentationCard;
+                                animation-iteration-count: 1;
+                                animation-fill-mode: both;
+                                animation-direction: alternate;
+                            }
+                    
+                                @keyframes listItemPresentationCard {
+                                    from{width: 0%; }
+                                    to{width: 80%;}
+                                }
+
+                        /* Item de la lista CONTENEDOR de texto de la habilidad */        
+                            .skillTextContainer{
+                                height: 180px;
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                margin-bottom: 85px;
+                                padding-bottom: 110px;
                                 justify-content: center;
+                                text-align: left;
+                                list-style: none;
+
                             }
 
-                    /* Item de la lista LINEA divisoria de la habilidad */
-                        .skillDivisoryLine{
-                            display: none;
-                            border-color: aliceblue;
-                            border-width: 2px;
-                            position: absolute;
-                            top: 0;
-                            animation-duration: 2000ms;
-                            animation-name: listItemPresentationCard;
-                            animation-iteration-count: 1;
-                            animation-fill-mode: both;
-                            animation-direction: alternate;
-                        }
-                
-                            @keyframes listItemPresentationCard {
-                                from{width: 0%; }
-                                to{width: 80%;}
-                            }
+                            /* Item de la lista con TEXTO de la habilidad */
+                                .skillText{
+                                    position: relative;
+                                    padding: 10px;
+                                    margin-top: 20px;
+                                    margin-left: 15px;
+                                    color: rgb(231, 231, 231);
+                                    font-size: 1.3vw;
+                                    font-weight: 500;
+                                    font-family: calibri ,'acid', 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                    user-select: none;
+                                    text-shadow: 0px 0px 20px rgb(0, 0, 0);  
+                                }    
 
-                    /* Item de la lista CONTENEDOR de texto de la habilidad */        
-                        .skillTextContainer{
-                            height: 180px;
-                            width: 100%;
-                            position: absolute;
-                            bottom: 0;
-                            margin-bottom: 85px;
-                            padding-bottom: 110px;
-                            justify-content: center;
-                            text-align: left;
-                            list-style: none;
+                        /* TITULO de la habilidad */    
+                            .skillTitle{
+                                width: 100%;
 
-                        }
-
-                        /* Item de la lista con TEXTO de la habilidad */
-                            .skillText{
-                                position: relative;
-                                padding: 10px;
-                                margin-top: 20px;
-                                margin-left: 15px;
                                 color: rgb(231, 231, 231);
-                                font-size: 1.3vw;
-                                font-weight: 500;
-                                font-family: calibri ,'acid', 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                background-color: rgb(34, 34, 34);
+                                margin: auto auto;
+                                padding-top: 4px;
+
+                                margin-top: 23px;
+                                
+                                position: absolute;
+                                bottom: 0;
+                                justify-content: center;
+                                text-align: center;
+
+                                font-size: 5vw;
+                                font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                text-shadow: 0px 0px 20px rgb(0, 0, 0);                    
+
                                 user-select: none;
-                                text-shadow: 0px 0px 20px rgb(0, 0, 0);  
+                                border-bottom-left-radius: 20px;
+                                border-bottom-right-radius: 20px;
+                            }
+
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~~~~~~~~~ EXPERIENCIA ~~~~~~~~~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */  
+        
+            /* Contenedor de la seccion de experiencia */
+                .experienceSectionContainer{
+                    box-sizing: border-box !important;
+                    position: relative;
+                    width: 100%;
+                    top: 1200px;
+                    z-index: 0;
+                }
+
+                /* Contenedor del titulo de la seccion de experiencia */
+                    /* .experienceTittleContainerOPEN{
+                        width: 50%;
+                        height: 100px;
+
+                        position: absolute;
+                        top: -150px;
+
+                        box-shadow: 15px 15px 15px rgb(0, 0, 0);
+                        border-bottom: 100px solid rgba(36, 36, 36, 0.637);
+                        border-left: 5vw dashed rgb(68, 0, 255);
+
+                        animation-delay: 100ms;
+                        animation-duration: 1s;
+                        animation-name: openTittleSkill;
+                        animation-iteration-count: 1;
+                        animation-fill-mode: both;
+                        animation-direction: alternate;
+                    }
+                        @keyframes openTittleSkill {
+                            from{right: -100%;}
+                            to{right: 0;}
+                        } */
+
+                    .experienceTittleContainer{
+                        width: 50%;
+                        height: 4vw;
+                        
+                        position: absolute;
+                        top: -6.5vw;/* -120 */
+                        left: 0;
+
+                        box-shadow: 0px 0px 1vw 0.8vw rgb(0, 0, 0);
+                        border-bottom: 7.5vw solid rgba(36, 36, 36, 0.637);
+                        
+                        animation-duration: 18s;
+                        animation-name: colourChangeExperience;
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: both;
+                        animation-direction: alternate-reverse;
+                    }
+                        
+                        @keyframes colourChangeExperience {
+                            0%{border-right: 5vw dashed rgb(255, 0, 0);}
+                            10%{border-right: 5vw dashed rgb(255, 94, 0);}
+                            20%{border-right: 5vw dashed rgb(255, 136, 0);}
+                            30%{border-right: 5vw dashed rgb(255, 208, 0);}
+                            40%{border-right: 5vw dashed rgb(208, 255, 0);}
+                            50%{border-right: 5vw dashed rgb(94, 255, 0);}
+                            60%{border-right: 5vw dashed rgb(0, 255, 128);}
+                            70%{border-right: 5vw dashed rgb(0, 255, 234);}
+                            80%{border-right: 5vw dashed rgb(0, 195, 255);}
+                            90%{border-right: 5vw dashed rgb(0, 89, 255);}
+                            100%{border-right: 5vw dashed rgb(68, 0, 255);}
+                        }
+
+                    /* Texto del titulo de la seccion de experiencia */
+                        .experienceTittleText{
+                            margin-top: 1%;
+                            margin-right: 1.5vw;
+                            display: flex;
+                            color: aliceblue;
+                            position: absolute;
+                            user-select: none;
+                            font-size: 5.7vw;
+                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            text-shadow: 0px 0px 0.1vw rgb(0, 0, 0); 
+                            right: 0;
+
+                        }
+
+            /* =========================== Contenedor GRID con LOGOS ============================ */
+
+                /* Contenedor Article con los logos de la experiencia */
+                    .experienceGridLogoContainer{
+                        width: 100%;
+                        height: auto;
+                        padding: 1vw;
+                        position: relative;
+                        top: 7vw;
+                        display: grid;
+                        grid-template-columns: auto auto auto auto auto;
+                        grid-area: auto;
+                        grid-template-areas: auto;
+                    }
+
+                    /* Button con los Logos */
+                        .experienceGridLogo{
+                            height: 13vw;
+                            width: 13vw;
+                            outline: none !important;
+                            background-color: rgba(0, 0, 0, 0);
+                            background-position: center center;
+                            background-size: 7vw 7vw;
+                            background-repeat: no-repeat;
+                            background-attachment: scroll;
+                            background-size: contain;
+                            overflow: visible;
+                            border: none;
+                            transition: ease-in-out 250ms;
+                            transform: scale(1, 1);
+                            filter: drop-shadow(0 0px 0.5vw rgb(74, 0, 245));
+                        }
+
+                        .experienceGridLogo:hover{
+                            transition: ease-in-out 250ms;
+                            transform: scale(1.2, 1.2);
+                            padding-bottom: 0.1vw;
+                            filter: drop-shadow(0 0px 1.0vw rgb(245, 0, 94));
+                        }
+
+            /* ================ Contenedor DETALLADO de Experiencia con PREVIEWS ================ */
+
+                /* Lista PADRE contenedora gnrl de todas las experiencias */        
+                    .experienceListContainer{
+                        list-style: none;
+                        padding: 5.3vw 1vw 1vw 1vw;
+                        padding: 6vw 1vw 6vw 1vw;
+                        width: 100%;
+                        margin-top: 5vw;
+                    }    
+
+                    /* ITEM de lista contenedor de CADA UNA de las experiencias */
+                        .experienceItemContainer{
+                            border-radius: 1.5vw;
+                            margin-bottom: 4vw;
+                            display: flex;
+                            padding: 1vw;
+                            background-color: rgba(22, 22, 22, 0.719);
+                            height: 33.7vw;/* 450px */
+                        }
+
+                        /* Logo de la experiencia */
+                            .experienceLogo{
+                                height: 10vw;/* 150px experienceItemContainer*/
+                                width: 10vw;/* 150px */
+                                margin: auto auto;
+                                margin-right: 2vw;/* 25px */
+                                margin-left: 1vw;/* 15px */
+                                border-radius: 100%;
+                                filter: drop-shadow(0 0px 1.5vw  rgb(0, 0, 0));
+
+                            }
+
+                        /* Texto de "Previsualizacion:" */
+                            .experienceText{
+                                margin: 0;
+                                margin-top: 0.4vw;
+                                margin-bottom: 1vw;
+                                margin-left: 1.5vw;
+                                display: flex;
+                                padding: 0;
+                                right: 0;
+                                color: aliceblue;
+                                user-select: none;
+                                font-size: 1.6vw;
+                                font-family: 'acid', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                text-shadow: 0px 0px 1vw rgb(0, 0, 0);
+                            }   
+                            
+                        /* DIV Contenedor del previer, sus botones y el de visitar pag */
+                            .experienceDivContainer{
+                                border-left-style: dashed;
+                                border-left-width: 0.1vw;
+                                border-left-color: rgba(76, 0, 255, 0.39); /* rgba(255, 239, 147, 0.158); */
                             }    
 
-                    /* TITULO de la habilidad */    
-                        .skillTitle{
+                            /* Lista PADRE contenedora del preview de la experiencia (botones NEXT/PREV y fotos) */
+                                .experiencePreviewListContainer{
+                                    list-style: none;
+                                    display: flex;
+                                    padding: 0;
+                                    margin: 0;
+                                    width: 56.2vw;
+                                }
+
+                                /* ITEM de lista contenedor de botones NEXT/PREV y fotos */
+                                    .experiencePreviewItemContainer{
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+
+                                    /* Boton PREVIOUS del preview de la experiencia */
+                                        .experiencePreviewPREVIOUS{
+                                            background-color: rgb(76, 0, 255);
+                                            outline: none !important;
+                                            color: aliceblue;
+                                            border-top-right-radius: 0.5vw;
+                                            border-bottom-right-radius: 0.5vw;
+                                            border-width: 0;
+                                            box-shadow: 0px 0px 0.8vw black;
+                                            text-shadow: 0px 0px 0.5vw rgb(0, 0, 0);
+                                            font-size: 2.2vw;
+                                            position: relative;
+                                            top: 40%;
+                                            right: 0;
+                                            padding-top: 1vw;
+                                            padding-bottom: 1.7vw;
+                                            padding-left: 0.5vw;
+                                            padding-right: 0.5vw;
+                                            z-index: 5;
+                                        }
+                                    
+                                        .experiencePreviewPREVIOUS:hover{
+                                            filter: contrast(180%) saturate(120%);
+                                        }
+
+                                    /* Imagenes del preview de la experiencia */
+                                        .experiencePreviewImages{
+                                            padding: 0.5vw;
+                                            margin: 0;
+                                            position: relative;
+                                            z-index: 1 !important;
+                                            width: 52vw;/* 700px // 52vw */
+                                            height: 27.9vw; /* 370px //  */
+                                        } 
+
+                                    /* Boton NEXT del preview de la experiencia */
+                                        .experiencePreviewNEXT{
+                                            background-color: rgb(76, 0, 255);
+                                            outline: none !important;
+                                            color: aliceblue;
+                                            border-top-left-radius: 0.5vw;
+                                            border-bottom-left-radius: 0.5vw;
+                                            border-width: 0;
+                                            box-shadow: 0px 0px 1vw black;
+                                            text-shadow: 0px 0px 0.5vw rgb(0, 0, 0);
+                                            font-size: 2.2vw;
+                                            padding-top: 1vw;
+                                            padding-bottom: 1.7vw;
+                                            padding-left: 0.5vw;
+                                            padding-right: 0.5vw;
+                                            position: relative;
+                                            top: 40%;
+                                            left: 0;
+                                            z-index: 5;
+                                        }
+                        
+                                        .experiencePreviewNEXT:hover{
+                                            filter: contrast(180%) saturate(120%);
+                                        }
+
+                        /* SPAN Contenedor de los items del visualizador */
+                            .experiencePreviewSlider{
+                                display: flex;
+                                position: relative;        
+                                z-index: 12;
+                                top: -1.8vw;
+                                justify-content: space-evenly;
+                                margin: auto auto;
+                                padding-left: 19vw;
+                                padding-right: 19vw;
+                            }
+
+                            /* Slider visualizador Actual*/
+                                .experiencePreviewSliderON{
+                                    font-size: 3.8vw;
+                                    position: relative;
+                                    display: flex;
+                                    bottom: 0;
+                                    user-select: none;
+                                    padding: 0;
+                                    animation-name: fadeInVisualizer;
+                                    animation-duration: 0.5s;
+                                    animation-iteration-count: 1;
+                                    animation-fill-mode: forwards;
+                                    text-shadow: 0px 0px 0.5vw rgb(98, 0, 255);
+                                }
+
+                                    @keyframes fadeInVisualizer {
+                                        from {color: rgb(51, 51, 51);}
+                                        to {color: rgb(76, 0, 255);}
+                                    }
+
+                            /* Slider visualizador oculto*/
+                                .experiencePreviewSliderOFF{
+                                    font-size: 3.8vw;
+                                    position: relative;
+                                    display: flex;
+                                    bottom: 0;
+                                    user-select: none;
+                                    justify-content: center;
+                                    padding: 0;
+                                    animation-name: fadeOutVisualizer;
+                                    animation-duration: 0.5s;
+                                    animation-iteration-count: 1;
+                                    animation-fill-mode: forwards;
+                                    animation-direction: normal;
+                                    text-shadow: 0px 0px 0.8vw rgb(0, 0, 0);
+
+                                }
+
+                                    @keyframes fadeOutVisualizer {
+                                        from {color: rgb(255, 236, 202);}
+                                        to {color: rgb(51, 51, 51);}
+                                    }
+
+                            /* Slider visualizador Killer */
+                                .experiencePreviewSliderDEAD{
+                                    font-size: 3.8vw;
+                                    position: relative;
+                                    display: flex;
+                                    bottom: 0;
+                                    user-select: none;
+                                    justify-content: center;
+                                    padding: 0;
+                                    text-shadow: 0px 0px 0.8vw rgb(0, 0, 0);
+                                    color: rgb(83, 83, 83);
+                                }    
+                    
+                    /* Contenedor del Texto de descripcion de la experiencia */        
+                        .experienceDescriptionContainer{
                             width: 100%;
-
-                            color: rgb(231, 231, 231);
-                            background-color: rgb(34, 34, 34);
-                            margin: auto auto;
-                            padding-top: 4px;
-
-                            margin-top: 23px;
+                            border-left-style: dashed;
+                            border-left-width: 0.1vw;
+                            border-left-color: rgba(76, 0, 255, 0.342);
+                            padding: 0.3vw;
+                            z-index: 5; 
+                            position: relative;
                             
-                            position: absolute;
-                            bottom: 0;
-                            justify-content: center;
-                            text-align: center;
-
-                            font-size: 5vw;
-                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                            text-shadow: 0px 0px 20px rgb(0, 0, 0);                    
-
-                            user-select: none;
-                            border-bottom-left-radius: 20px;
-                            border-bottom-right-radius: 20px;
                         }
+
+                        /* Texto de la descripcion */
+                            .experienceDescriptionText{
+                                position: relative;
+                                margin-left: 1vw;
+                                margin-right: 0.5vw;
+                                display: flex;
+                                right: 0;
+                                color: aliceblue;
+                                user-select: none;
+                                font-weight: 800;
+                                font-size: 1.5vw;
+                                font-family: 'acid', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                text-shadow: 0px 0px 1vw rgb(0, 0, 0);
+                                overflow: auto;
+
+                            }  
+
+                            /* Contenedor FORM del boton de "vicitar pagina" */
+                                .experienceViciteButtonContainer{
+                                    /* position: relative;
+                                    background-color: red;
+                                    height: 32.2vw;
+                                    top: -250px;
+                                    display: flex;
+                                    justify-content: center; */
+                                }
+
+                                /* Botón de "Visitar Pagina" */      
+                                    .experienceViciteButton{
+                                        position: absolute;
+                                        
+                                        bottom: 0 !important;
+                                        color: aliceblue;
+                                        font-size: 1.5vw;
+                                        font-family: 'acid', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                                        text-shadow: 0px 0px 6px rgb(0, 0, 0);
+                                        background-color: rgb(76, 0, 255);
+                                        border-radius: 0.5vw;
+                                        outline: none !important;
+                                        border-width: 0.1vw;
+                                        border-color: rgba(255, 251, 197, 0.034);
+                                        border-style: dashed;
+                                        padding: 0.4vw;
+                                    }   
+                                    
+                                    .experienceViciteButton:hover{
+                                        filter: contrast(180%) saturate(120%);
+                                    }
+                                
+
+
+
+
 
 }
 
