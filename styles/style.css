@@ -909,10 +909,16 @@ body{
                         grid-template-columns: auto auto auto auto auto;
                         grid-area: auto;
                         grid-template-areas: auto;
+                        grid-auto-columns: 13vw;
+                        grid-template-columns: repeat(5, 1fr);
+                        grid-gap: 2vw;
+                        grid-auto-flow: dense;
+                        align-items: center;
                     }
 
                     /* Button con los Logos */
                         .experienceGridLogo{
+                            z-index: 1;
                             height: 13vw;
                             width: 13vw;
                             outline: none !important;
@@ -927,9 +933,11 @@ body{
                             transition: ease-in-out 250ms;
                             transform: scale(1, 1);
                             filter: drop-shadow(0 0px 0.5vw rgb(74, 0, 245));
+                            
                         }
 
                         .experienceGridLogo:hover{
+                            z-index: 2;
                             transition: ease-in-out 250ms;
                             transform: scale(1.2, 1.2);
                             padding-bottom: 0.1vw;
