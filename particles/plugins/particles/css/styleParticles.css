@@ -62,43 +62,77 @@ canvas{
 
 
 /* ---- particles.js container ---- */
+/* VISTA PC */
+/* Cuando la pantalla es mayor a "X" ejecuta el programa */
+@media only screen and (min-width: 910px) {/* 910px */
+  #particles-js{
+    width: 150%;
+    height: 150%;
 
-#particles-js{
-  width: 150%;
-  height: 150%;
+    position: fixed;
+    z-index: 0 !important;
+    top: -10vw;
+    left: -10vw;
+  }
 
-  position: fixed;
-  z-index: 0 !important;
-  top: -10vw;
-  left: -10vw;
+  .particlesDarkContainer{
+    background: linear-gradient(238deg, #000000, #0e0e0e, #0c0c0c, #080808, #000000, #131313, #111111);
+    background-size: 5000% 5000%;
+    animation: darkGradientBody 25s ease infinite;
+    animation-play-state: running;
+    background-attachment:scroll;
+  }
+
+
+  @keyframes darkGradientBody {
+    0%{background-position:56% 0%}
+    50%{background-position:45% 100%}
+    100%{background-position:56% 0%}
+  }
+
+  .particlesLightContainer{
+    background: linear-gradient(238deg, #ececec, #e9e9e9, #fffefe, #f9fffd, #e7e7e7, #fcfcfc, #f0f0f0, #020202, #0c0c0c, #000000, #000000);
+    background-size: 5000% 5000%;
+    animation: lightGradientBody 25s ease infinite;
+    animation-play-state: running;
+    background-attachment:scroll;
+  }
+
+  @keyframes lightGradientBody {
+    0%{background-position:56% 0%}
+    50%{background-position:45% 100%}
+    100%{background-position:56% 0%}
+  }
+
 }
 
-.particlesDarkContainer{
-  background: linear-gradient(238deg, #000000, #0e0e0e, #0c0c0c, #080808, #000000, #131313, #111111);
-  background-size: 5000% 5000%;
-  animation: darkGradientBody 25s ease infinite;
-  background-attachment:scroll;
-}
 
+/* VISTA PH */
+/* Cuando la pantalla es menor a "X" ejecuta el programa */
+@media only screen and (max-width: 909px) {
+  #particles-js{
+    width: 150%;
+    height: 150%;
+    position: fixed;
+    z-index: 0 !important;
+    top: -10vw;
+    left: -10vw;
+  }
 
-@keyframes darkGradientBody {
-  0%{background-position:56% 0%}
-  50%{background-position:45% 100%}
-  100%{background-position:56% 0%}
-}
+  .particlesDarkContainer{
+    background: linear-gradient(238deg, #000000, #0e0e0e, #0c0c0c, #080808, #000000, #131313, #111111);
+    background-size: 500% 500%;
+    animation: darkGradientBody 25s ease infinite;
+    animation-play-state: paused;
+    background-attachment:local;
+  }
 
+  .particlesLightContainer{
+    background: linear-gradient(238deg, #ececec, #e9e9e9, #fffefe, #f9fffd, #e7e7e7, #fcfcfc, #f0f0f0, #020202, #0c0c0c, #000000, #000000);
+    background-size: 500% 500%;
+    animation: darkGradientBody 25s ease infinite;
+    animation-play-state: paused;
+    background-attachment:local;  
+  }
 
-
-.particlesLightContainer{
-  background: linear-gradient(238deg, #ececec, #e9e9e9, #fffefe, #f9fffd, #e7e7e7, #fcfcfc, #f0f0f0, #020202, #0c0c0c, #000000, #000000);
-  background-size: 5000% 5000%;
-  animation: lightGradientBody 25s ease infinite;
-  background-attachment:scroll;
-}
-
-
-@keyframes lightGradientBody {
-  0%{background-position:56% 0%}
-  50%{background-position:45% 100%}
-  100%{background-position:56% 0%}
-}
+} 

@@ -1,4 +1,21 @@
 jQuery(document).ready(function($){  
+  /* ~~~~~~~~~~~~~~~~ GLOBALES ~~~~~~~~~~~~~~~~ */
+    randomizeColour = [
+      'filter: drop-shadow(0 0px 1.0vw rgb(255, 0, 0));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(255, 94, 0));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(255, 136, 0));', 
+      'filter: drop-shadow(0 0px 1.0vw rgb(255, 208, 0));', 
+      'filter: drop-shadow(0 0px 1.0vw rgb(208, 255, 0));', 
+      'filter: drop-shadow(0 0px 1.0vw rgb(94, 255, 0));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(0, 255, 128));',  
+      'filter: drop-shadow(0 0px 1.0vw rgb(0, 255, 234));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(0, 195, 255));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(0, 89, 255));',
+      'filter: drop-shadow(0 0px 1.0vw rgb(68, 0, 255));',
+    ]; 
+
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 
   var valueTheme = document.getElementById('themeButton').value;/* Obtiene el tema */
   var controlNavBar = undefined; /* Control OPEN/CLOSE de NavBar */
@@ -155,6 +172,19 @@ jQuery(document).ready(function($){
         }
 
   /* ============== Gestion y control de HABILIDADES ============== */
+    var skillName = [undefined,
+      /* html5----------- */'HTML5',
+      /* css3------------ */'CSS3',
+      /* javascript------ */'JavaScript',
+      /* mysql----------- */'MySQL',
+      /* firebase-------- */'Firebase',
+      /* react----------- */'React',
+      /* angular--------- */'Angular',
+      /* nodejs---------- */'NodeJS',
+      /* express--------- */'EXPRESS',
+      /* mongodb--------- */'MongoDB',
+      
+    ]
 
     var skillImage = [undefined,
     /* html5----------- */'./img/logos/html5Logo.png',
@@ -182,18 +212,7 @@ jQuery(document).ready(function($){
     /* mongodb--------- */'PROXIMAMENTEdescripcion de ejemplo a ver que onda con esto',
   ]
 
-   var skillName = [undefined,
-    /* html5----------- */'HTML5',
-    /* css3------------ */'CSS3',
-    /* javascript------ */'JavaScript',
-    /* mysql----------- */'MySQL',
-    /* firebase-------- */'Firebase',
-    /* react----------- */'React',
-    /* angular--------- */'Angular',
-    /* nodejs---------- */'NodeJS',
-    /* express--------- */'EXPRESS',
-    /* mongodb--------- */'MongoDB',
-  ]
+
 
     /* Controlador para el zindex de la fila de abajo (hace que vaya en regresiva) */
       /* DESACTIVAR PARA USAR INDEX */  
@@ -206,7 +225,7 @@ jQuery(document).ready(function($){
     /* Creacion de elementos del menú */
       for (idSkill in skillName) {
         /* Saltea el indefinido del indice 0 */
-            if (idSkill == 0){
+            if (skillName[idSkill] == undefined){
                 continue;
             } else if (idSkill <= 5){ /* Agrega items a la primera fila */
 
@@ -243,32 +262,280 @@ jQuery(document).ready(function($){
       }
 
   /* ============== Seccion de EXPERIENCIA ============== */
-    
-    /* GRID con los logos */
-      var experienceLogos = [undefined,
-        /* html5----------- */'./img/logos/html5Logo.png',
-        /* css3------------ */'./img/logos/css3Logo.png',
-        /* javascript------ */'./img/logos/jsLogo.png',
-        /* mysql----------- */'./img/logos/mysqlLogo.png',
-        /* firebase-------- */'./img/logos/firebaseLogo.png',
-        /* react----------- */'./img/logos/reactLogo.png',
-        /* angular--------- */'./img/logos/angularLogo.png',
-        /* nodejs---------- */'./img/logos/nodejsLogo.png',
-        /* express--------- */'./img/logos/expressjsLogo.png',
-        /* mongodb--------- */'./img/logos/mongodb.png',
+
+    /* ~~~~~ Globales de la seccion de experiencia ~~~~~ */
+      var previewState = false; /* Controlador de apertura/cierre del preview */
+      var latestButton; /* Almacena el ultimo boton que fue tocado */
+      var photoPreview; /* Almacena el nombre indice del array asosiativo con la ruta de la imagen del preview */
+      var sliderPreviewController = 1; /* Indice numerico que Controla el slider de las fotos del preview */
+      var previewOpened; /* almacena cual es el preview que esta abierto para manejar el slider */
+
+    /* NOMBRE */
+      var experienceName = [undefined,
+        /* LT House----------- */'LT House',
       ]
 
-      var experienceName = [undefined,
-        /* html5----------- */'HTML5',
-        /* css3------------ */'CSS3',
-        /* javascript------ */'JavaScript',
-        /* mysql----------- */'MySQL',
-        /* firebase-------- */'Firebase',
-        /* react----------- */'React',
-        /* angular--------- */'Angular',
-        /* nodejs---------- */'NodeJS',
-        /* express--------- */'EXPRESS',
-        /* mongodb--------- */'MongoDB',
+    /* LOGO */
+      var experienceLogos = [undefined,
+        /* LT House----------- */'./img/ltPreviews/ltLogo.png',
       ]
-      
+
+    /* DESCRIPCION */
+      var experienceDescription = [undefined,
+        /* LT House----------- */"",
+      ]
+
+    /* FOTOS PREVIEW */
+      var allPreviewPhotos = {/* NO USA CAMELCASE */
+        /* LT House existe?----------- */ lthouse: 'exist',
+        /* LT House Photo 1----------- */ lthouse1:"./img/ltPreviews/ltScreen1.png",
+        /* LT House Photo 2----------- */ lthouse2:"./img/ltPreviews/ltScreen2.png",
+        /* LT House Photo 3----------- */ lthouse3:"./img/ltPreviews/ltScreen3.png",
+        /* LT House Photo 4----------- */ lthouse4:"./img/ltPreviews/ltScreen4.png",
+        /* LT House Photo 5----------- */ lthouse5:"./img/ltPreviews/ltScreen5.png",
+        
+      }
+
+    /* LINKS DIRECTOS */
+      var experienceLinks = [undefined,
+        /* LT House Photo ------------ */ 'https://agustinyerba.github.io/pruebalt/'
+      ]  
+
+        /* Creacion de GRID con logos */
+          for (idExperience in experienceName) {
+            /* Saltea el indefinido del indice 0 */
+                if (idExperience == 0){
+                    continue;
+                } 
+
+                /* Crea el grid con los logos de las experiencias */
+                  let menu = document.getElementById('experienceGridLogo');
+
+                  let idNameCorrect = experienceName[idExperience];
+                  idNameCorrect = idNameCorrect.toLowerCase();
+                  idNameCorrect = idNameCorrect.replace(' ', '');
+
+                  menu.innerHTML += `<button class="experienceGridLogo" id="${idNameCorrect+idExperience}"(this) title="Ver más sobre ${experienceName[idExperience]}" style="background-image: url(${experienceLogos[idExperience]});"></button>`;            
+          }     
+
+
+        $("button").click(function() {
+          let id = this.id;
+
+          var idName = id.replaceAll(/\d/g,"");
+          let idNumber = id.replaceAll(/[^\d\+]/g,"");
+
+          let existOnPreviewArray = allPreviewPhotos[idName];
+
+          
+          if (idNumber > 0) { /* Solo se activa si el id del boton tocado tiene un numero */
+
+            photoPreview = idName + sliderPreviewController;
+
+            /* Si tocaste el mismo boton que tocaste antes y el preview esta ABIERTO entonces: */
+              if (latestButton == id && previewState == true) {
+                  setTimeout(() => {
+                    document.getElementById('experienceItemContainer').className = 'experienceItemContainerCLOSE';
+                    previewState = false;
+                  }, 200);
+              }
+
+            /* SI existe el preview y el preview esta CERRADO entonces: */
+              else if (existOnPreviewArray == 'exist' && previewState == false){
+
+                /* Contenedor del preview */
+                  document.getElementById('experienceItemContainer').className = 'experienceItemContainerOPEN';
+                  previewState = true;
+
+                /* Logo de la experiencia en el preview */
+                  document.getElementById('experienceLogo').src = experienceLogos[idNumber];
+
+                /* Reseña del cliente de la experiencia */
+                  if (experienceDescription[idNumber] == undefined || experienceDescription[idNumber] == "") {
+                    document.getElementById('experienceDescriptionText').innerHTML = 'No se ha realizado una reseña aún.';
+                  } else if (experienceDescription[idNumber] != undefined){
+                    document.getElementById('experienceDescriptionText').innerHTML = experienceDescription[idNumber];
+                  }
+              
+                /* Establece el link en el botón de "vicitar pagina" */
+                  document.getElementById('vicitePagButton').action = experienceLinks[idNumber];
+                  
+                /* Pone la primera imagen del preview */
+                  document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+                  sliderPreviewController = 1
+              } 
+
+            /* SI existe el preview y el preview esta ABIERTO entonces: */
+              else if (existOnPreviewArray == 'exist' && previewState == true){
+                document.getElementById('experienceItemContainer').className = 'experienceItemContainerCLOSE';
+                previewState = false;
+
+                setTimeout(() => {
+        
+                  /* Contenedor del preview */
+                    document.getElementById('experienceItemContainer').className = 'experienceItemContainerOPEN';
+                    previewState = true;
+
+                  /* Logo de la experiencia en el preview */
+                    document.getElementById('experienceLogo').src = experienceLogos[idNumber];
+
+                  /* Reseña del cliente de la experiencia */
+                    if (experienceDescription[idNumber] == undefined || experienceDescription[idNumber] == "") {
+                      document.getElementById('experienceDescriptionText').innerHTML = 'No se ha realizado una reseña aún.';
+                    } else if (experienceDescription[idNumber] != undefined){
+                      document.getElementById('experienceDescriptionText').innerHTML = experienceDescription[idNumber];
+                    }
+                
+                  /* Establece el link en el botón de "vicitar pagina" */
+                    document.getElementById('vicitePagButton').action = experienceLinks[idNumber];
+
+                  /* Pone la primera imagen del preview */
+                    document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+                    sliderPreviewController = 1
+
+                }, 510);
+              }
+
+            /* Si NO existe el preview: */
+              else if (existOnPreviewArray == undefined) {
+
+                if (previewState == true){
+                  document.getElementById('experienceItemContainer').className = 'experienceItemContainerCLOSE';
+                  previewState = false;
+                } 
+
+                /* Como no existe el preview,
+                verifica si puede redireccionar a la pagina */
+
+              }
+
+              latestButton = id;
+
+          }
+
+          /* preview SIGUIENTE */
+            else if (id == 'previewNEXT'){
+
+              setTimeout(() => {
+
+                previewOpened = latestButton.replaceAll(/\d/g,"");
+
+                sliderPreviewController++;
+
+                if (sliderPreviewController >= 6) {
+
+                  sliderPreviewController = 1;
+                  photoPreview = previewOpened + sliderPreviewController;
+
+                  document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+    
+                } else if (sliderPreviewController <= 5){
+                  photoPreview = previewOpened + sliderPreviewController;
+
+                  document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+                }
+
+                sliderNextGestion()
+
+              }, 10);
+
+            }  
+
+          /* preview ANTERIOR */
+            else if (id == 'previewPREVIOUS'){
+              setTimeout(() => {
+
+                previewOpened = latestButton.replaceAll(/\d/g,"");
+
+                sliderPreviewController--;
+
+                if (sliderPreviewController < 1) {
+
+                  sliderPreviewController = 5;
+                  photoPreview = previewOpened + sliderPreviewController;
+
+                  document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+    
+                } else if (sliderPreviewController >= 1){
+                  photoPreview = previewOpened + sliderPreviewController;
+
+                  document.getElementById('experiencePreviewImages').src = allPreviewPhotos[photoPreview];
+                }
+
+                sliderPrevGestion()
+
+              }, 10);
+
+            } 
+
+          function sliderNextGestion() {
+            if (sliderPreviewController == 1){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerON";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerOFF";
+            } else if (sliderPreviewController == 2){
+                document.getElementById('sliderVisualizer1').className = "sliderVisualizerOFF";
+                document.getElementById('sliderVisualizer2').className = "sliderVisualizerON";
+                document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+            } else if (sliderPreviewController == 3){
+                document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer2').className = "sliderVisualizerOFF";
+                document.getElementById('sliderVisualizer3').className = "sliderVisualizerON";
+                document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+            } else if (sliderPreviewController == 4){
+                document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer3').className = "sliderVisualizerOFF";
+                document.getElementById('sliderVisualizer4').className = "sliderVisualizerON";
+                document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+            } else if (sliderPreviewController == 5){
+                document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+                document.getElementById('sliderVisualizer4').className = "sliderVisualizerOFF";
+                document.getElementById('sliderVisualizer5').className = "sliderVisualizerON";
+            } 
+          }
+
+          function sliderPrevGestion() {
+            if (sliderPreviewController == 1){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerON";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerOFF";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+          } else if (sliderPreviewController == 2){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerON";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerOFF";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+          } else if (sliderPreviewController == 3){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerON";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerOFF";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerDEAD";
+          } else if (sliderPreviewController == 4){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerON";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerOFF";
+          } else if (sliderPreviewController == 5){
+              document.getElementById('sliderVisualizer1').className = "sliderVisualizerOFF";
+              document.getElementById('sliderVisualizer2').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer3').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer4').className = "sliderVisualizerDEAD";
+              document.getElementById('sliderVisualizer5').className = "sliderVisualizerON";
+          } 
+          }
+
+        });
+
 });

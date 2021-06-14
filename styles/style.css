@@ -1,47 +1,49 @@
+/* =========================== GLOBAL =========================== */
 
-@font-face {
-    font-family: 'title';
-    font-style: normal;
-    font-weight: 2000px;
-    src: url("../fonts/TransitDisplay.ttf") format('truetype');
-  } 
+    @font-face {
+        font-family: 'title';
+        font-style: normal;
+        font-weight: 2000px;
+        src: url("../fonts/TransitDisplay.ttf") format('truetype');
+    } 
 
-  @font-face {
-    font-family: 'font2';
-    font-style: normal;
-    font-weight: 2000px;
-    src: url("../fonts/built\ titling\ sb.ttf") format('truetype');
-  } 
+    @font-face {
+        font-family: 'font2';
+        font-style: normal;
+        font-weight: 2000px;
+        src: url("../fonts/built\ titling\ sb.ttf") format('truetype');
+    } 
 
-  @font-face {
-    font-family: 'acid';
-    font-style: normal;
-    /* src: url("../fonts/accid__1.ttf") format('truetype'); */
-    src: url("../fonts/Alte\ Haas\ Grotesk.ttf") format('truetype');
+    @font-face {
+        font-family: 'acid';
+        font-style: normal;
+        /* src: url("../fonts/accid__1.ttf") format('truetype'); */
+        src: url("../fonts/Alte\ Haas\ Grotesk.ttf") format('truetype');
 
-  }
+    }
 
-/* ============================================================================= */
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    
-}
+    /* ============================================================= */
 
-:root{
-    box-sizing: border-box !important;
+    *{
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        
+    }
 
-}
+    :root{
+        box-sizing: border-box !important;
 
-body{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    user-select: none;
-    padding: 0;
-}
+    }
+
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        user-select: none;
+        padding: 0;
+    }
 
 
-/* VISTA PC */
+/* VISTA UNIVERSAL PC */
 /* Cuando la pantalla es mayor a "X" ejecuta el programa */
 @media only screen and (min-width: 0px) {/* 910px */
     /* ============================================================================== */
@@ -459,9 +461,7 @@ body{
                     }    
 
                     /* Items de la lista de la tarjeta de presentacion */
-                        /*.listItemPresentationCard{
-
-                        } */
+                        /*.listItemPresentationCard{} */
 
                         /* Hijos */
                             .listItemPresentationCard h1{
@@ -544,7 +544,7 @@ body{
                             }    
 
         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
-        /* ~~~~~~~~~ Contenedores de habilidades ~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~ HABILIDADES ~~~~~~~~~~~~~~~~~ */  
         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
 
             /* Contenedor SECCION de habilidades */                    
@@ -555,7 +555,7 @@ body{
                     top: 1020px;
                     z-index: 5;
                 }    
-
+                
                 /* Contenedor del titulo de la seccion */
                     .skillTitleSectionContainerOPEN{
                         width: 50%;
@@ -582,14 +582,14 @@ body{
 
                     .skillTitleSectionContainer{
                         width: 50%;
-                        height: 100px;
+                        height: 4vw;
 
                         position: absolute;
-                        top: -150px;/* -120 */
+                        top: -12.5vw;/* -120 */
                         right: 0;
 
-                        box-shadow: 0px 0px 15px 10px rgb(0, 0, 0);
-                        border-bottom: 100px solid rgba(36, 36, 36, 0.637);
+                        box-shadow: 0px 0px 1vw 0.8vw rgb(0, 0, 0);
+                        border-bottom: 7.5vw solid rgba(36, 36, 36, 0.637);
                         
                         animation-duration: 15s;
                         animation-name: colourChange;
@@ -648,7 +648,6 @@ body{
                             border-right-style: dashed;
                             border-color: rgba(255, 230, 0, 0.096);
                             background-color: rgb(43, 43, 43);
-                            
                             animation-duration: 200ms;
                             animation-name: skillSpecificContainerCLOSE;
                             animation-iteration-count: 1;
@@ -821,8 +820,8 @@ body{
                     box-sizing: border-box !important;
                     position: relative;
                     width: 100%;
-                    top: 1200px;
-                    z-index: 0;
+                    top: 88vw;
+                    z-index: 10;
                 }
 
                 /* Contenedor del titulo de la seccion de experiencia */
@@ -904,16 +903,15 @@ body{
                         height: auto;
                         padding: 1vw;
                         position: relative;
-                        top: 7vw;
+                        top: 5vw;
                         display: grid;
                         grid-template-columns: auto auto auto auto auto;
                         grid-area: auto;
                         grid-template-areas: auto;
                         grid-auto-columns: 13vw;
                         grid-template-columns: repeat(5, 1fr);
-                        grid-gap: 2vw;
+                        grid-gap: 3vw;
                         grid-auto-flow: dense;
-                        align-items: center;
                     }
 
                     /* Button con los Logos */
@@ -933,7 +931,7 @@ body{
                             transition: ease-in-out 250ms;
                             transform: scale(1, 1);
                             filter: drop-shadow(0 0px 0.5vw rgb(74, 0, 245));
-                            
+                            margin: auto auto;
                         }
 
                         .experienceGridLogo:hover{
@@ -956,14 +954,43 @@ body{
                     }    
 
                     /* ITEM de lista contenedor de CADA UNA de las experiencias */
-                        .experienceItemContainer{
+                        .experienceItemContainerOPEN{
                             border-radius: 1.5vw;
                             margin-bottom: 4vw;
                             display: flex;
                             padding: 1vw;
                             background-color: rgba(22, 22, 22, 0.719);
-                            height: 33.7vw;/* 450px */
+                            overflow: hidden;
+                            animation-name: experienceItemContainerAnimOPEN;
+                            animation-duration: 500ms;
+                            animation-direction: alternate;
+                            animation-iteration-count: 1;
+                            animation-fill-mode: forwards;
                         }
+
+                            @keyframes experienceItemContainerAnimOPEN {
+                                from {height: 0vw; opacity: 0%;}
+                                to {height: 33.7vw; opacity: 100%;}
+                            }
+
+                        .experienceItemContainerCLOSE{
+                            border-radius: 1.5vw;
+                            margin-bottom: 4vw;
+                            display: flex;
+                            padding: 1vw;
+                            background-color: rgba(22, 22, 22, 0.719);
+                            overflow: hidden;
+                            animation-name: experienceItemContainerAnimCLOSE;
+                            animation-duration: 500ms;
+                            animation-direction: alternate;
+                            animation-iteration-count: 1;
+                            animation-fill-mode: forwards;
+                        }
+                        
+                            @keyframes experienceItemContainerAnimCLOSE {
+                                from {height: 33.7vw; opacity: 100%;}
+                                to {height: 0vw; opacity: 0%;}
+                            }
 
                         /* Logo de la experiencia */
                             .experienceLogo{
@@ -972,9 +999,7 @@ body{
                                 margin: auto auto;
                                 margin-right: 2vw;/* 25px */
                                 margin-left: 1vw;/* 15px */
-                                border-radius: 100%;
                                 filter: drop-shadow(0 0px 1.5vw  rgb(0, 0, 0));
-
                             }
 
                         /* Texto de "Previsualizacion:" */
@@ -1088,7 +1113,7 @@ body{
                             }
 
                             /* Slider visualizador Actual*/
-                                .experiencePreviewSliderON{
+                                .sliderVisualizerON{
                                     font-size: 3.8vw;
                                     position: relative;
                                     display: flex;
@@ -1108,7 +1133,7 @@ body{
                                     }
 
                             /* Slider visualizador oculto*/
-                                .experiencePreviewSliderOFF{
+                                .sliderVisualizerOFF{
                                     font-size: 3.8vw;
                                     position: relative;
                                     display: flex;
@@ -1126,12 +1151,12 @@ body{
                                 }
 
                                     @keyframes fadeOutVisualizer {
-                                        from {color: rgb(255, 236, 202);}
+                                        from {color: rgb(76, 0, 255);}
                                         to {color: rgb(51, 51, 51);}
                                     }
 
                             /* Slider visualizador Killer */
-                                .experiencePreviewSliderDEAD{
+                                .sliderVisualizerDEAD{
                                     font-size: 3.8vw;
                                     position: relative;
                                     display: flex;
@@ -1152,7 +1177,6 @@ body{
                             padding: 0.3vw;
                             z-index: 5; 
                             position: relative;
-                            
                         }
 
                         /* Texto de la descripcion */
@@ -1168,8 +1192,7 @@ body{
                                 font-size: 1.5vw;
                                 font-family: 'acid', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                                 text-shadow: 0px 0px 1vw rgb(0, 0, 0);
-                                overflow: auto;
-
+                                overflow: visible !important;
                             }  
 
                             /* Contenedor FORM del boton de "vicitar pagina" */
@@ -1204,6 +1227,183 @@ body{
                                         filter: contrast(180%) saturate(120%);
                                     }
                                 
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~~~~~~~~~~ SERVICIOS ~~~~~~~~~~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */  
+
+            /* Contenedor de la seccion de servicios */
+                .serviceSectionContainer{
+                    width: 100%;
+                    z-index: 0;
+                    position: relative;
+                    top: 97vw;
+                }    
+                
+                /* Contenedor del titulo de la seccion de servicios */
+                    .servicesTitleContainer{
+                        width: 50%;
+                        height: 4vw;
+
+                        position: absolute;
+                        top: -12vw;
+                        right: 0;
+
+                        box-shadow: 0px 0px 1vw 0.8vw rgb(0, 0, 0);
+                        border-bottom: 7.5vw solid rgba(36, 36, 36, 0.637);
+                        
+                        animation-duration: 18s;
+                        animation-name: colourChange;
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: both;
+                        animation-direction: alternate;
+                    }
+            
+                        @keyframes colourChange {
+                            0%{border-left: 5vw dashed rgb(255, 0, 0);}
+                            10%{border-left: 5vw dashed rgb(255, 94, 0);}
+                            20%{border-left: 5vw dashed rgb(255, 136, 0);}
+                            30%{border-left: 5vw dashed rgb(255, 208, 0);}
+                            40%{border-left: 5vw dashed rgb(208, 255, 0);}
+                            50%{border-left: 5vw dashed rgb(94, 255, 0);}
+                            60%{border-left: 5vw dashed rgb(0, 255, 128);}
+                            70%{border-left: 5vw dashed rgb(0, 255, 234);}
+                            80%{border-left: 5vw dashed rgb(0, 195, 255);}
+                            90%{border-left: 5vw dashed rgb(0, 89, 255);}
+                            100%{border-left: 5vw dashed rgb(68, 0, 255);}
+                        }
+
+                    /* TEXTO del título de la seccion de servicios */
+                        .servicesTitleText{
+                            margin-top: 1%;
+                            margin-left: 1.5vw;
+                            display: flex;
+                            color: aliceblue;
+                            position: absolute;
+                            user-select: none;
+                            font-size: 5.7vw;
+                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            text-shadow: 0px 0px 0.1vw rgb(0, 0, 0);                  
+                        }
+
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~~~~~~~~ ACERCA DE MI ~~~~~~~~~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */  
+
+            /* Contenedor de la seccion de ACERCA DE MI */
+                .aboutmeSectionContainer{
+                    width: 100%;
+                    z-index: 0;
+                    position: relative;
+                    top: 115vw;
+                }    
+            
+                /* Contenedor del titulo de la seccion de ACERCA DE MI */
+                    .aboutmeTitleContainer{
+                        width: 50%;
+                        height: 4vw;
+                        
+                        position: absolute;
+                        top: -12vw;
+                        left: 0;
+
+                        box-shadow: 0px 0px 1vw 0.8vw rgb(0, 0, 0);
+                        border-bottom: 7.5vw solid rgba(36, 36, 36, 0.637);
+                        
+                        animation-duration: 12s;
+                        animation-name: colourChangeExperience;
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: both;
+                        animation-direction: alternate-reverse;
+                    }
+                        
+                        @keyframes colourChangeExperience {
+                            0%{border-right: 5vw dashed rgb(255, 0, 0);}
+                            10%{border-right: 5vw dashed rgb(255, 94, 0);}
+                            20%{border-right: 5vw dashed rgb(255, 136, 0);}
+                            30%{border-right: 5vw dashed rgb(255, 208, 0);}
+                            40%{border-right: 5vw dashed rgb(208, 255, 0);}
+                            50%{border-right: 5vw dashed rgb(94, 255, 0);}
+                            60%{border-right: 5vw dashed rgb(0, 255, 128);}
+                            70%{border-right: 5vw dashed rgb(0, 255, 234);}
+                            80%{border-right: 5vw dashed rgb(0, 195, 255);}
+                            90%{border-right: 5vw dashed rgb(0, 89, 255);}
+                            100%{border-right: 5vw dashed rgb(68, 0, 255);}
+                        }
+
+                    /* TEXTO del título de la seccion de ACERCA DE MI */
+                        .aboutmeTitleText{
+                            margin-top: 1%;
+                            margin-right: 1.5vw;
+                            display: flex;
+                            color: aliceblue;
+                            position: absolute;
+                            user-select: none;
+                            font-size: 5.7vw;
+                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            text-shadow: 0px 0px 0.1vw rgb(0, 0, 0); 
+                            right: 0;               
+                        }
+
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */                    
+        /* ~~~~~~~~~~~~~~~~~~ CONTACTO ~~~~~~~~~~~~~~~~~~ */  
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */  
+
+            /* Contenedor de la seccion de CONTACTO */
+                .contactSectionContainer{
+                    width: 100%;
+                    height:auto;
+                    z-index: 0;
+                    position: relative;
+                    top: 135vw;
+                }    
+            
+                /* Contenedor del titulo de la seccion de CONTACTO */
+                    .contactTitleContainer{
+                        width: 50%;
+                        height: 4vw;
+
+                        position: absolute;
+                        right: 0;
+                        top: -11.2vw;
+
+                        box-shadow: 0px 0px 1vw 0.8vw rgb(0, 0, 0);
+                        border-bottom: 7.5vw solid rgba(36, 36, 36, 0.637);
+                        
+                        animation-duration: 18s;
+                        animation-name: colourChange;
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: both;
+                        animation-direction: alternate;
+                    }
+            
+                        @keyframes colourChange {
+                            0%{border-left: 5vw dashed rgb(255, 0, 0);}
+                            10%{border-left: 5vw dashed rgb(255, 94, 0);}
+                            20%{border-left: 5vw dashed rgb(255, 136, 0);}
+                            30%{border-left: 5vw dashed rgb(255, 208, 0);}
+                            40%{border-left: 5vw dashed rgb(208, 255, 0);}
+                            50%{border-left: 5vw dashed rgb(94, 255, 0);}
+                            60%{border-left: 5vw dashed rgb(0, 255, 128);}
+                            70%{border-left: 5vw dashed rgb(0, 255, 234);}
+                            80%{border-left: 5vw dashed rgb(0, 195, 255);}
+                            90%{border-left: 5vw dashed rgb(0, 89, 255);}
+                            100%{border-left: 5vw dashed rgb(68, 0, 255);}
+                        }
+
+                    /* TEXTO del título de la seccion de CONTACTO */
+                        .contactTitleText{
+                            margin-top: 1%;
+                            margin-left: 1.5vw;
+                            display: flex;
+                            color: aliceblue;
+                            position: absolute;
+                            user-select: none;
+                            font-size: 5.7vw;
+                            font-family: 'font2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            text-shadow: 0px 0px 0.1vw rgb(0, 0, 0);                  
+                        }
+
+
 
 
 
@@ -1214,14 +1414,7 @@ body{
 
 
 
-
-
-
-
-
-
-
-/* VISTA PH */
+/* VISTA UNIVERSAL PH */
 /* Cuando la pantalla es menor a "X" ejecuta el programa */
 /* @media only screen and (max-width: 909px) {
 
